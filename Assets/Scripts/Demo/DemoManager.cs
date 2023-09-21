@@ -92,4 +92,5 @@ public class DemoManager : MonoBehaviour
             SwitchPlayerType((_currentPlayerTypeIndex == playerTypes.Length - 1) ? 0 : _currentPlayerTypeIndex + 1);
         }
     }
+    //Test
 }
