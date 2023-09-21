@@ -482,6 +482,7 @@ public class PlayerMovement : MonoBehaviour
 
 		//Dash over
 		IsDashing = false;
+		LastOnGroundTime = 0;
 	}
 
 	//Short period before the player is able to dash again
