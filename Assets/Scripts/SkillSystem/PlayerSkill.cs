@@ -1,14 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using QFSW.QC;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
+public enum skillstate
+{
+    Ready,
+    Using,
+    Cooldown
+}
 public class PlayerSkill : MonoBehaviour
 {
     [Header("技能资源")]
     public List<SkillData> allSkills;
     public List<Image> skillUi;
+    
+    [Header("预备技能")]
+    public List<SkillData> skillList;
     public int skillNumber = 4;
     
     /// <summary>
@@ -37,7 +47,6 @@ public class PlayerSkill : MonoBehaviour
                 finalList.Add(skillImage);
             }
         }
-
         return finalList;
 
     }
@@ -48,7 +57,7 @@ public class PlayerSkill : MonoBehaviour
     [Command]
     public void ResetSkillIcon()
     {
-        List<SkillData> skillList = GetSkill();
+        skillList = GetSkill();
         for (int i = 0; i < skillUi.Count; i++)//todo:这个方法可以UI参考,UI写完后这里记得和变量一起删掉
         {
             skillUi[i].sprite = skillList[i].skillIcon;
@@ -59,5 +68,40 @@ public class PlayerSkill : MonoBehaviour
     {
         skillNumber = skillUi.Count;
         ResetSkillIcon();
+    }
+
+    void skillUsage()
+    {
+        if(skillList.Count>0)
+        {
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                Debug.Log(skillList[0].skillName + "使用了。");
+                //skillList[0].skillAnimationName = "Attack1";
+            }
+
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                Debug.Log(skillList[1].skillName + "使用了。");
+                //skillList[1].skillAnimationName = "Attack2";
+            }
+
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                Debug.Log(skillList[2].skillName + "使用了。");
+                //skillList[2].skillAnimationName = "Attack3";
+            }
+
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                Debug.Log(skillList[3].skillName + "使用了。");
+                //skillList[3].skillAnimationName = "Attack4";
+            }
+        }
+    }
+
+    private void Update()
+    {
+        skillUsage();
     }
 }

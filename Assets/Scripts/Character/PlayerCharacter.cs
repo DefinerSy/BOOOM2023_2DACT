@@ -15,8 +15,9 @@ public class PlayerCharacter : Character
         Hpbar.maxValue = _maxHp;
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         Hpbar.value = _currentHp;
         HpText.text = (Hpbar.value/100).ToString("P0");
     }
