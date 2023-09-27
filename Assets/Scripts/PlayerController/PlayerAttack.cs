@@ -20,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        PlayerMovement = GetComponent<PlayerMovement>();
+        PlayerMovement = this?.GetComponent<PlayerMovement>();
     }
 
     private void Update()
