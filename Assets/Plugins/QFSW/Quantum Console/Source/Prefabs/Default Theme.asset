@@ -14,23 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Font: {fileID: 11400000, guid: 03667487b095d134cb5d244fc285c9d1, type: 2}
   PanelMaterial: {fileID: 2100000, guid: 3f5fb7a53313bca46bc093dae10de6e4, type: 2}
-  PanelColor: {r: 1, g: 1, b: 1, a: 1}
+  PanelColor: {r: 1, g: 0.5801887, b: 0.5801887, a: 1}
   CommandLogColor: {r: 0, g: 1, b: 1, a: 1}
   SelectedSuggestionColor: {r: 1, g: 1, b: 0.427, a: 1}
-  SuggestionColor: {r: 0.601, g: 0.601, b: 0.601, a: 1}
+  SuggestionColor: {r: 0.32599998, g: 0.32599998, b: 0.32599998, a: 1}
   ErrorColor: {r: 1, g: 0, b: 0, a: 1}
   WarningColor: {r: 1, g: 0.5, b: 0, a: 1}
   SuccessColor: {r: 0, g: 1, b: 0, a: 1}
   TimestampFormat: '[{0:00}:{1:00}:{2:00}]'
+  CommandLogFormat: '> {0}'
   DefaultReturnValueColor: {r: 1, g: 0.7372549, b: 0.54901963, a: 1}
   TypeFormatters:
   - _type: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-    Color: {r: 1, g: 1, b: 1, a: 1}
+    Color: {r: 1, g: 0.8915094, b: 0.8915094, a: 1}
   - _type: System.Collections.IEnumerable, mscorlib, Version=4.0.0.0, Culture=neutral,
       PublicKeyToken=b77a5c561934e089
     Color: {r: 0.99215686, g: 0.9490196, b: 0.4117647, a: 1}
-  - _type: System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0, Culture=neutral,
-      PublicKeyToken=b77a5c561934e089
+  - _type: System.Collections.Generic.KeyValuePair`2, mscorlib, Version=4.0.0.0,
+      Culture=neutral, PublicKeyToken=b77a5c561934e089
     Color: {r: 0.7311321, g: 1, b: 0.9315609, a: 1}
   - _type: System.Collections.DictionaryEntry, mscorlib, Version=4.0.0.0, Culture=neutral,
       PublicKeyToken=b77a5c561934e089
