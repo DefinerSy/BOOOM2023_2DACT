@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHP : AllHP
 {
     public float hpmax;
-    public static float hpcurrent;
+    public float hpcurrent;
     private Image hpimage;
     public Text hptext;
     // Start is called before the first frame update
