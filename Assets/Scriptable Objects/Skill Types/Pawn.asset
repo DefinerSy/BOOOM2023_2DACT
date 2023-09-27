@@ -16,4 +16,8 @@ MonoBehaviour:
   skillName: Pawn
   skillDescription: 
   skillIcon: {fileID: 21300000, guid: 919f20ad7e4582a418486a314c5521ad, type: 3}
+  skillAnimationName: Skill_Animation_Pawn
+  skillFrontPoint: 0
+  skillBackPoint: 0
+  skillDamage: 0
   skillChance: 100
