@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,7 @@ public class PlayerAnimator : MonoBehaviour
     private PlayerMovement mov;
     private Animator anim;
     private SpriteRenderer spriteRend;
-
-    private DemoManager demoManager;
+    private Rigidbody2D rd2D;
 
     [Header("Movement Tilt")]
     [SerializeField] private float maxTilt;
@@ -20,21 +20,27 @@ public class PlayerAnimator : MonoBehaviour
     private ParticleSystem _jumpParticle;
     private ParticleSystem _landParticle;
 
+    //State
     public bool startedJumping {  private get; set; }
     public bool justLanded { private get; set; }
-
-    public float currentVelY;
+    public bool dashing { private get; set; }
+    
 
     private void Start()
     {
+        justLanded = true;
         mov = GetComponent<PlayerMovement>();
         spriteRend = GetComponentInChildren<SpriteRenderer>();
-        anim = spriteRend.GetComponent<Animator>();
-
-        demoManager = FindObjectOfType<DemoManager>();
-
+        anim = GetComponent<Animator>();
+        rd2D = GetComponent<Rigidbody2D>();
+        
         _jumpParticle = jumpFX.GetComponent<ParticleSystem>();
         _landParticle = landFX.GetComponent<ParticleSystem>();
+    }
+
+    private void Update()
+    {
+        anim.SetFloat("AirSpeedY",rd2D.velocity.y);
     }
 
     private void LateUpdate()
@@ -72,22 +78,37 @@ public class PlayerAnimator : MonoBehaviour
         if (startedJumping)
         {
             anim.SetTrigger("Jump");
-            GameObject obj = Instantiate(jumpFX, transform.position - (Vector3.up * transform.localScale.y / 2), Quaternion.Euler(-90, 0, 0));
+            anim.SetBool("Grounded",false);
+            GameObject obj = Instantiate(jumpFX, transform.position - (Vector3.up * transform.localScale.y / 3f), Quaternion.Euler(-90, 0, 0));
             Destroy(obj, 1);
             startedJumping = false;
             return;
+            
         }
 
         if (justLanded)
         {
-            anim.SetTrigger("Land");
-            GameObject obj = Instantiate(landFX, transform.position - (Vector3.up * transform.localScale.y / 1.5f), Quaternion.Euler(-90, 0, 0));
+            anim.SetBool("Grounded",true);
+            GameObject obj = Instantiate(landFX, transform.position - (Vector3.up * transform.localScale.y / 3f), Quaternion.Euler(-90, 0, 0));
             Destroy(obj, 1);
             justLanded = false;
             Debug.Log("Land");
             return;
         }
 
-        //anim.SetFloat("Vel Y", mov.RB.velocity.y);
+        if (dashing)
+        {
+            anim.SetTrigger("Roll");
+            dashing = false;
+        }
+        
+        if (Mathf.Abs(mov.RB.velocity.x) > Mathf.Epsilon)
+        {
+            anim.SetInteger("AnimState", 1);
+        }
+        else
+        {
+            anim.SetInteger("AnimState", 0);
+        }
     }
 }

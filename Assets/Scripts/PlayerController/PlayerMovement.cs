@@ -190,6 +190,8 @@ public class PlayerMovement : MonoBehaviour
 				_lastWallJumpDir = (LastOnWallRightTime > 0) ? -1 : 1;
 
 				WallJump(_lastWallJumpDir);
+				
+				AnimHandler.startedJumping = true;
 			}
 		}
 		#endregion
@@ -425,6 +427,7 @@ public class PlayerMovement : MonoBehaviour
 		LastOnWallLeftTime = 0;
 
 		#region Perform Wall Jump
+		
 		Vector2 force = new Vector2(Data.wallJumpForce.x, Data.wallJumpForce.y);
 		force.x *= dir; //apply force in opposite direction of wall
 
@@ -457,7 +460,7 @@ public class PlayerMovement : MonoBehaviour
 		_isDashAttacking = true;
 
 		SetGravityScale(0);
-
+		AnimHandler.dashing = true;
 		//We keep the player's velocity at the dash speed during the "attack" phase (in celeste the first 0.15s)
 		while (Time.time - startTime <= Data.dashAttackTime)
 		{
