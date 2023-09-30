@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,4 +12,5 @@ public class AllHP : MonoBehaviour
     {
         HPtext.text = HPcurrent.ToString() + "/" + HPmax.ToString();
     }
+    //这nm写的什么玩意基类就用来干这个？
 }

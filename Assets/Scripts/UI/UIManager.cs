@@ -1,14 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+   [Header("UI对象")]
    public PlayerStatBar playerStatBar;
    
    [Header("事件监听")] 
-   public CharacterEventSO healthEvent;
+   public CharacterEvent healthEvent;
 
    private void OnEnable()
    {
@@ -17,12 +15,12 @@ public class UIManager : MonoBehaviour
 
    private void OnDisable()
    {
-      healthEvent.OnEventRaised += OnHealthEvent;
+      healthEvent.OnEventRaised -= OnHealthEvent;
    }
 
-   private void OnHealthEvent(PlayerHP hp)
+   private void OnHealthEvent(Character character)
    {
-      var persentage = hp.hpcurrent / hp.hpmax;
+      float persentage = character._currentHp / character._maxHp;
       playerStatBar.OnHealthChange(persentage);
    }
 }

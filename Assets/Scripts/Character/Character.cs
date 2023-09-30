@@ -17,8 +17,8 @@ public enum type
 public class Character : MonoBehaviour
 {
     [Header("角色属性")] [SerializeField] protected string _name;
-    [SerializeField] public int _maxHp;
-    [SerializeField] public int _currentHp;
+    [SerializeField] public float _maxHp;
+    [SerializeField] public float _currentHp;
     [SerializeField] protected float _attackDamage;
     [SerializeField] protected type _type;
     [Header("角色事件")]
@@ -50,7 +50,9 @@ public class Character : MonoBehaviour
     }
     public void HealthIsChange(int Damage)
     {
-        OnHealthChange?.Invoke(this);
+        Debug.Log("HP:"+_currentHp+"->"+(_currentHp-Damage));
         _currentHp -= Damage;
+        OnHealthChange?.Invoke(this);
+        
     }
 }
