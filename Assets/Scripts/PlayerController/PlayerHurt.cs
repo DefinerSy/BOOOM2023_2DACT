@@ -23,7 +23,7 @@ public class PlayerHurt : MonoBehaviour
     [Command]public void Hurt(int Damage)
     {
         isHurt = true;
-        PlayerCharacter._currentHp -= Damage;
+        PlayerCharacter.HealthIsChange(Damage);
         anim.SetTrigger("Hurt");
         if (PlayerCharacter._currentHp <=0)
         {

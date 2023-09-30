@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PlayerCharacter : Character
@@ -21,4 +22,5 @@ public class PlayerCharacter : Character
         Hpbar.value = _currentHp;
         HpText.text = (Hpbar.value/100).ToString("P0");
     }
+    
 }

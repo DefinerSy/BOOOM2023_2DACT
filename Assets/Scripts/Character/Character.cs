@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// 角色种类
@@ -20,11 +21,14 @@ public class Character : MonoBehaviour
     [SerializeField] public int _currentHp;
     [SerializeField] protected float _attackDamage;
     [SerializeField] protected type _type;
+    [Header("角色事件")]
+    [SerializeField] public UnityEvent<Character> OnHealthChange;
     bool isDie = false;
 
     protected virtual void Start()
     {
         _currentHp = _maxHp;
+        HealthIsChange(0);
     }
 
     protected virtual void Update()
@@ -43,5 +47,10 @@ public class Character : MonoBehaviour
         {
             isDie = false;
         }
+    }
+    public void HealthIsChange(int Damage)
+    {
+        OnHealthChange?.Invoke(this);
+        _currentHp -= Damage;
     }
 }
