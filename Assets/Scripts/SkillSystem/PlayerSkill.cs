@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using QFSW.QC;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -20,7 +21,10 @@ public class PlayerSkill : MonoBehaviour
 
     [Header("预备技能")] public List<SkillData> skillList;
     public int skillNumber = 4;
-
+    
+    [Header("技能事件")]
+    public UnityEvent<List<SkillData>> OnSkillReady;
+    
     /// <summary>
     /// 随机获取技能
     /// </summary>
@@ -58,6 +62,7 @@ public class PlayerSkill : MonoBehaviour
     public void ResetSkillIcon()
     {
         skillList = GetSkill();
+        OnSkillReady?.Invoke(skillList);
         for (int i = 0; i < skillUi.Count; i++) //todo:这个方法可以UI参考,UI写完后这里记得和变量一起删掉
         {
             skillUi[i].sprite = skillList[i].skillIcon;
