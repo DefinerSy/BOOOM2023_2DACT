@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using QFSW.QC;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -11,15 +12,18 @@ public enum skillstate
     Using,
     Cooldown
 }
+
 public class PlayerSkill : MonoBehaviour
 {
-    [Header("技能资源")]
+    [Header("技能资源")] 
     public List<SkillData> allSkills;
     public List<Image> skillUi;
-    
-    [Header("预备技能")]
-    public List<SkillData> skillList;
+
+    [Header("预备技能")] public List<SkillData> skillList;
     public int skillNumber = 4;
+    
+    [Header("技能事件")]
+    public UnityEvent<List<SkillData>> OnSkillReady;
     
     /// <summary>
     /// 随机获取技能
@@ -30,12 +34,12 @@ public class PlayerSkill : MonoBehaviour
         List<SkillData> finalList = new List<SkillData>();
         for (int i = 0; i < skillNumber; i++)
         {
-            int RangeNumber = Random.Range(1, 101);//1~100
+            int RangeNumber = Random.Range(1, 101); //1~100
             List<SkillData> posibleList = new List<SkillData>();
-            
+
             foreach (SkillData skill in allSkills)
             {
-                if (skill.skillChance >=RangeNumber)
+                if (skill.skillChance >= RangeNumber)
                 {
                     posibleList.Add(skill);
                 }
@@ -47,10 +51,10 @@ public class PlayerSkill : MonoBehaviour
                 finalList.Add(skillImage);
             }
         }
-        return finalList;
 
+        return finalList;
     }
-    
+
     /// <summary>
     /// 将技能同步到图标（UI可以参考这个）
     /// </summary>
@@ -58,7 +62,8 @@ public class PlayerSkill : MonoBehaviour
     public void ResetSkillIcon()
     {
         skillList = GetSkill();
-        for (int i = 0; i < skillUi.Count; i++)//todo:这个方法可以UI参考,UI写完后这里记得和变量一起删掉
+        OnSkillReady?.Invoke(skillList);
+        for (int i = 0; i < skillUi.Count; i++) //todo:这个方法可以UI参考,UI写完后这里记得和变量一起删掉
         {
             skillUi[i].sprite = skillList[i].skillIcon;
         }
@@ -70,31 +75,34 @@ public class PlayerSkill : MonoBehaviour
         ResetSkillIcon();
     }
 
+    /// <summary>
+    /// 技能使用
+    /// </summary>
     void skillUsage()
     {
-        if(skillList.Count>0)
+        if (skillList.Count > 0)
         {
-            if (Input.GetKeyDown(KeyCode.J))
+            if (Input.GetKeyDown(KeyCode.J) && skillList[0] != null)
             {
-                Debug.Log(skillList[0].skillName + "使用了。");
+                Debug.Log(skillList[0].skillName + " is Used");
                 //skillList[0].skillAnimationName = "Attack1";
             }
 
-            if (Input.GetKeyDown(KeyCode.I))
+            if (Input.GetKeyDown(KeyCode.I) && skillList[1] != null)
             {
-                Debug.Log(skillList[1].skillName + "使用了。");
+                Debug.Log(skillList[1].skillName + " is Used");
                 //skillList[1].skillAnimationName = "Attack2";
             }
 
-            if (Input.GetKeyDown(KeyCode.L))
+            if (Input.GetKeyDown(KeyCode.L) && skillList[2] != null)
             {
-                Debug.Log(skillList[2].skillName + "使用了。");
+                Debug.Log(skillList[2].skillName + " is Used");
                 //skillList[2].skillAnimationName = "Attack3";
             }
 
-            if (Input.GetKeyDown(KeyCode.K))
+            if (Input.GetKeyDown(KeyCode.K) && skillList[3] != null)
             {
-                Debug.Log(skillList[3].skillName + "使用了。");
+                Debug.Log(skillList[3].skillName + " is Used");
                 //skillList[3].skillAnimationName = "Attack4";
             }
         }

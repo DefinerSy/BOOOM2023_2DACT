@@ -5,10 +5,14 @@ public class PlayerHurt : MonoBehaviour
 {
     [Header("玩家受伤相关组件及变量")]
     private PlayerCharacter PlayerCharacter;
+
+    private Animator anim;
     public bool isHurt = false;
+    
     private void Start()
     {
-        PlayerCharacter = GetComponent<PlayerCharacter>();
+        PlayerCharacter = this?.GetComponent<PlayerCharacter>();
+        anim = GetComponent<Animator>();
     }
     
     
@@ -19,6 +23,17 @@ public class PlayerHurt : MonoBehaviour
     [Command]public void Hurt(int Damage)
     {
         isHurt = true;
-        PlayerCharacter._currentHp -= Damage;
+        PlayerCharacter.HealthIsChange(Damage);
+        anim.SetTrigger("Hurt");
+        if (PlayerCharacter._currentHp <=0)
+        {
+            Die();
+        }
+    }
+
+    [Command]
+    public void Die()
+    {
+        anim.SetTrigger("Death");
     }
 }

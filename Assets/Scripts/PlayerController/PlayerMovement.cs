@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 	#region COMPONENTS
     public Rigidbody2D RB { get; private set; }
 	//Script to handle all player animations, all references can be safely removed if you're importing into your own project.
-	public PlayerAnimator AnimHandler { get; private set; }
+	public PlayerAnimatorController AnimHandler { get; private set; }
 	#endregion
 
 	#region STATE PARAMETERS
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 	#endregion
 
 	#region INPUT PARAMETERS
-	private Vector2 _moveInput;
+	public Vector2 _moveInput;
 
 	public float LastPressedJumpTime { get; private set; }
 	public float LastPressedDashTime { get; private set; }
@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
 	{
 		RB = GetComponent<Rigidbody2D>();
-		AnimHandler = GetComponent<PlayerAnimator>();
+		AnimHandler = GetComponent<PlayerAnimatorController>();
 	}
 
 	private void Start()
@@ -190,6 +190,8 @@ public class PlayerMovement : MonoBehaviour
 				_lastWallJumpDir = (LastOnWallRightTime > 0) ? -1 : 1;
 
 				WallJump(_lastWallJumpDir);
+				
+				AnimHandler.startedJumping = true;
 			}
 		}
 		#endregion
@@ -425,6 +427,7 @@ public class PlayerMovement : MonoBehaviour
 		LastOnWallLeftTime = 0;
 
 		#region Perform Wall Jump
+		
 		Vector2 force = new Vector2(Data.wallJumpForce.x, Data.wallJumpForce.y);
 		force.x *= dir; //apply force in opposite direction of wall
 
@@ -457,7 +460,7 @@ public class PlayerMovement : MonoBehaviour
 		_isDashAttacking = true;
 
 		SetGravityScale(0);
-
+		AnimHandler.dashing = true;
 		//We keep the player's velocity at the dash speed during the "attack" phase (in celeste the first 0.15s)
 		while (Time.time - startTime <= Data.dashAttackTime)
 		{

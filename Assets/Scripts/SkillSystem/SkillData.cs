@@ -10,11 +10,11 @@ public class SkillData : ScriptableObject
 
     [Header("技能相关资源")] 
     public Sprite skillIcon;
-    public float skillChance;
+    public string skillAnimationName;
 
     [Header("技能数据")] 
     public float skillFrontPoint;
     public float skillBackPoint;
-    public string skillAnimationName;
     public int skillDamage;
+    public float skillChance;
 }
