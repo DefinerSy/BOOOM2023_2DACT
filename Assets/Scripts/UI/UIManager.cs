@@ -9,6 +9,9 @@ public class UIManager : MonoBehaviour
    public PlayerStatBar playerStatBar;
 
    public List<Image> skilluis;
+
+   [Header("动画")] 
+   public Animator resetanim;
    
    
    [Header("事件监听")] 
@@ -30,8 +33,10 @@ public class UIManager : MonoBehaviour
 
    private void OnSkillResetEvent(List<SkillData> skillList)
    {
+      resetanim.Play("SkillReset");
       for (int i = 0; i < skilluis.Count; i++)
       {
+         skilluis[i].gameObject.GetComponent<Button>().interactable = true;
          skilluis[i].sprite = skillList[i].skillIcon;
       }
    }

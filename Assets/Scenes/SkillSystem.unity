@@ -7976,6 +7976,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 146470314431724832, guid: 3a049950524ba7b4aad48649655c3987,
         type: 3}
+      propertyPath: resetanim
+      value: 
+      objectReference: {fileID: 1877218933}
+    - target: {fileID: 146470314431724832, guid: 3a049950524ba7b4aad48649655c3987,
+        type: 3}
       propertyPath: skillResetEvent
       value: 
       objectReference: {fileID: 11400000, guid: 808ac807721eedc48ad17ef2716d9cbe,
@@ -8005,10 +8010,35 @@ PrefabInstance:
       propertyPath: skilluis.Array.data[3]
       value: 
       objectReference: {fileID: 425032742}
+    - target: {fileID: 728443023580992885, guid: 3a049950524ba7b4aad48649655c3987,
+        type: 3}
+      propertyPath: m_Transition
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 728443023580992885, guid: 3a049950524ba7b4aad48649655c3987,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 728443023580992885, guid: 3a049950524ba7b4aad48649655c3987,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825566970294369497, guid: 3a049950524ba7b4aad48649655c3987,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8347379729907862418, guid: 3a049950524ba7b4aad48649655c3987,
         type: 3}
       propertyPath: m_Name
       value: Canvas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347379729907862418, guid: 3a049950524ba7b4aad48649655c3987,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9006645238242651716, guid: 3a049950524ba7b4aad48649655c3987,
         type: 3}
@@ -8118,7 +8148,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 873761173074315266, guid: 3a049950524ba7b4aad48649655c3987,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1877218933}
   m_SourcePrefab: {fileID: 100100000, guid: 3a049950524ba7b4aad48649655c3987, type: 3}
 --- !u!1 &669295823
 GameObject:
@@ -9457,6 +9491,33 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1877218931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 873761173074315266, guid: 3a049950524ba7b4aad48649655c3987,
+    type: 3}
+  m_PrefabInstance: {fileID: 628902336}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1877218933
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877218931}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd07609e034d695409274c8ff7f91705, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2098369728 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3475848845660968696, guid: 3a049950524ba7b4aad48649655c3987,
