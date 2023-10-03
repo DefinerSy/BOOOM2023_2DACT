@@ -25,7 +25,7 @@ public class PlayerSkill : MonoBehaviour
     [Header("技能重置事件")]
     public UnityEvent<List<SkillData>> OnSkillReady;
     [Header("技能释放事件")]
-    public UnityEvent<SkillData> OnSkillUsed;
+    public UnityEvent<int> OnSkillUsed;
     
     /// <summary>
     /// 随机获取技能
@@ -85,28 +85,28 @@ public class PlayerSkill : MonoBehaviour
                 //传递按下特殊键
                 if (Input.GetKeyDown(KeyCode.J) && skillList[0] != null)
                 {
-                    OnSkillUsed?.Invoke(skillList[0]);
+                    OnSkillUsed?.Invoke(0);
                     Debug.Log(skillList[0].skillName + " is Used");
                     //skillList[0].skillAnimationName = "Attack1";
                 }
 
                 if (Input.GetKeyDown(KeyCode.I) && skillList[1] != null)
                 {
-                    OnSkillUsed?.Invoke(skillList[1]);
+                    OnSkillUsed?.Invoke(1);
                     Debug.Log(skillList[1].skillName + " is Used");
                     //skillList[1].skillAnimationName = "Attack2";
                 }
 
                 if (Input.GetKeyDown(KeyCode.L) && skillList[2] != null)
                 {
-                    OnSkillUsed?.Invoke(skillList[2]);
+                    OnSkillUsed?.Invoke(2);
                     Debug.Log(skillList[2].skillName + " is Used");
                     //skillList[2].skillAnimationName = "Attack3";
                 }
 
                 if (Input.GetKeyDown(KeyCode.K) && skillList[3] != null)
                 {
-                    OnSkillUsed?.Invoke(skillList[3]);
+                    OnSkillUsed?.Invoke(3);
                     Debug.Log(skillList[3].skillName + " is Used");
                     //skillList[3].skillAnimationName = "Attack4";
                 }

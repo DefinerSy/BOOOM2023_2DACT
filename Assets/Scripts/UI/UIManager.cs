@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,16 +20,22 @@ public class UIManager : MonoBehaviour
 
    public SkillEvent skillResetEvent;
 
+   public SkillEvent skillUsedEvent;
+   private bool isbig;
    private void OnEnable()
    {
       healthEvent.OnEventRaised += OnHealthEvent;
       skillResetEvent.OnEventRaised += OnSkillResetEvent;
+      skillUsedEvent.OnSkillUse += OnSkillUsedEvent;
    }
+
+
 
    private void OnDisable()
    {
       healthEvent.OnEventRaised -= OnHealthEvent;
       skillResetEvent.OnEventRaised -= OnSkillResetEvent;
+      skillUsedEvent.OnSkillUse -= OnSkillUsedEvent;
    }
 
    private void OnSkillResetEvent(List<SkillData> skillList)
@@ -47,5 +54,23 @@ public class UIManager : MonoBehaviour
       playerStatBar.OnHealthChange(persentage);
    }
    
-   
+   private void OnSkillUsedEvent(int usedskill)
+   {
+      skilluis[usedskill].gameObject.GetComponent<Button>().interactable = false;
+      //todo:后面换动画
+   }
+
+   private void Update()
+   {
+      if (Input.GetKeyDown(KeyCode.Semicolon) && !isbig)
+      {
+         resetanim.Play("OnSkill");
+         isbig = true;
+      }
+      else if(Input.GetKeyUp(KeyCode.Semicolon))
+      {
+         resetanim.Play("OutSkill");
+         isbig = false;
+      }
+   }
 }

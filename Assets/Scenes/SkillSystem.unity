@@ -691,7 +691,7 @@ PrefabInstance:
     - target: {fileID: 224130951485110974, guid: 9ed2a051c32b4fe47a5e4fb95c20b03f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000030517578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224166536479716514, guid: 9ed2a051c32b4fe47a5e4fb95c20b03f,
         type: 3}
@@ -924,6 +924,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224773539050736570, guid: 9ed2a051c32b4fe47a5e4fb95c20b03f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224785810147451886, guid: 9ed2a051c32b4fe47a5e4fb95c20b03f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -7981,6 +7986,12 @@ PrefabInstance:
       objectReference: {fileID: 1877218933}
     - target: {fileID: 146470314431724832, guid: 3a049950524ba7b4aad48649655c3987,
         type: 3}
+      propertyPath: skillUsedEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 34240e9d31a813e44b45c1e13f9b1272,
+        type: 2}
+    - target: {fileID: 146470314431724832, guid: 3a049950524ba7b4aad48649655c3987,
+        type: 3}
       propertyPath: skillResetEvent
       value: 
       objectReference: {fileID: 11400000, guid: 808ac807721eedc48ad17ef2716d9cbe,
@@ -8013,7 +8024,7 @@ PrefabInstance:
     - target: {fileID: 728443023580992885, guid: 3a049950524ba7b4aad48649655c3987,
         type: 3}
       propertyPath: m_Transition
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 728443023580992885, guid: 3a049950524ba7b4aad48649655c3987,
         type: 3}
@@ -8024,6 +8035,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_DisabledColor.a
       value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785784596602084118, guid: 3a049950524ba7b4aad48649655c3987,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345783635139049043, guid: 3a049950524ba7b4aad48649655c3987,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7334934128139679904, guid: 3a049950524ba7b4aad48649655c3987,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564081866960160934, guid: 3a049950524ba7b4aad48649655c3987,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7825566970294369497, guid: 3a049950524ba7b4aad48649655c3987,
         type: 3}
