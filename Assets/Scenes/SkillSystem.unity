@@ -691,7 +691,7 @@ PrefabInstance:
     - target: {fileID: 224130951485110974, guid: 9ed2a051c32b4fe47a5e4fb95c20b03f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 224166536479716514, guid: 9ed2a051c32b4fe47a5e4fb95c20b03f,
         type: 3}
@@ -8692,6 +8692,21 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: 808ac807721eedc48ad17ef2716d9cbe, type: 2}
         m_TargetAssemblyTypeName: SkillEvent, Assembly-CSharp
         m_MethodName: RaiseEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnSkillUsed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 34240e9d31a813e44b45c1e13f9b1272, type: 2}
+        m_TargetAssemblyTypeName: SkillEvent, Assembly-CSharp
+        m_MethodName: SkillUsedEvent
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
