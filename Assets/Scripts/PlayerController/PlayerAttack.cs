@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -34,7 +32,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.J) && m_timeSinceAttack > _attackCd)
+        if (Input.GetKeyDown(KeyCode.J) && m_timeSinceAttack > _attackCd && !Input.GetKey(KeyCode.Semicolon))
         {
             m_currentAttack++;
 
