@@ -17,7 +17,7 @@ public class PlayerSkill : MonoBehaviour
 {
     [Header("技能资源")] 
     public List<SkillData> allSkills;
-    public List<Image> skillUi;
+
 
     [Header("预备技能")] public List<SkillData> skillList;
     public int skillNumber = 4;
@@ -63,15 +63,12 @@ public class PlayerSkill : MonoBehaviour
     {
         skillList = GetSkill();
         OnSkillReady?.Invoke(skillList);
-        for (int i = 0; i < skillUi.Count; i++) //todo:这个方法可以UI参考,UI写完后这里记得和变量一起删掉
-        {
-            skillUi[i].sprite = skillList[i].skillIcon;
-        }
+        
     }
 
     private void Start()
     {
-        skillNumber = skillUi.Count;
+        
         ResetSkillIcon();
     }
 
