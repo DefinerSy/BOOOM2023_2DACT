@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D RB { get; private set; }
 	//Script to handle all player animations, all references can be safely removed if you're importing into your own project.
 	public PlayerAnimatorController AnimHandler { get; private set; }
+	public PlayerAttack Attack { get; private set; }
 	#endregion
 
 	#region STATE PARAMETERS
@@ -73,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		RB = GetComponent<Rigidbody2D>();
 		AnimHandler = GetComponent<PlayerAnimatorController>();
+		Attack = GetComponent<PlayerAttack>();
 	}
 
 	private void Start()
@@ -125,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
 				if(LastOnGroundTime < -0.1f)
                 {
 					AnimHandler.justLanded = true;
+					Attack._isAttacking = false;
                 }
 
 				LastOnGroundTime = Data.coyoteTime; //if so sets the lastGrounded to coyoteTime
@@ -209,7 +212,7 @@ public class PlayerMovement : MonoBehaviour
 				_lastDashDir = IsFacingRight ? Vector2.right : Vector2.left;
 
 
-
+			Attack._isAttacking = false;
 			IsDashing = true;
 			IsJumping = false;
 			IsWallJumping = false;
