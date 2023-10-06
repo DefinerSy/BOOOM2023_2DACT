@@ -8,7 +8,6 @@ public class UIManager : MonoBehaviour
    
    [Header("UI对象")]
    public PlayerStatBar playerStatBar;
-
    public List<Image> skilluis;
 
    [Header("动画")] 
@@ -28,9 +27,7 @@ public class UIManager : MonoBehaviour
       skillResetEvent.OnEventRaised += OnSkillResetEvent;
       skillUsedEvent.OnSkillUse += OnSkillUsedEvent;
    }
-
-
-
+   
    private void OnDisable()
    {
       healthEvent.OnEventRaised -= OnHealthEvent;

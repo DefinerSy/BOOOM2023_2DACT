@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -70,6 +71,11 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private LayerMask _groundLayer;
 	#endregion
 
+	#region EVENTS
+	[Header("Events")] 
+	[SerializeField] private UnityEvent OnDash;
+
+	#endregion
     private void Awake()
 	{
 		RB = GetComponent<Rigidbody2D>();
@@ -211,13 +217,13 @@ public class PlayerMovement : MonoBehaviour
 			else
 				_lastDashDir = IsFacingRight ? Vector2.right : Vector2.left;
 
-
+			
 			Attack._isAttacking = false;
 			IsDashing = true;
 			IsJumping = false;
 			IsWallJumping = false;
 			_isJumpCut = false;
-
+			OnDash?.Invoke();
 			StartCoroutine(nameof(StartDash), _lastDashDir);
 		}
 		#endregion
