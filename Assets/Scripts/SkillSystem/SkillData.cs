@@ -20,15 +20,17 @@ public class SkillData : ScriptableObject
     public int skillDamage;
     public float skillChance;
 }
-[CustomEditor(typeof(SkillData))]
-public class SkillDataEditor : Editor
-{
-    public override void OnInspectorGUI()
+#if UNITY_EDITOR
+    [CustomEditor(typeof(SkillData))]
+    public class SkillDataEditor : Editor
     {
-        SkillData skillData = (SkillData) target;
-        EditorGUILayout.LabelField("技能数据："+skillData.skillName.ToUpper(), 
-            EditorStyles.boldLabel);
-        EditorGUILayout.Space(10);
-        base.OnInspectorGUI();
+        public override void OnInspectorGUI()
+        {
+            SkillData skillData = (SkillData) target;
+            EditorGUILayout.LabelField("技能数据："+skillData.skillName.ToUpper(), 
+                EditorStyles.boldLabel);
+            EditorGUILayout.Space(10);
+            base.OnInspectorGUI();
+        }
     }
-}
+#endif
