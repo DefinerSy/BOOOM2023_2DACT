@@ -22,6 +22,10 @@ public class PlayerStatBar : MonoBehaviour
       {
          hpDelayImage.fillAmount -= Time.deltaTime * hpRefuseSpeed;
       }
+      else
+      {
+         hpDelayImage.fillAmount = hpImage.fillAmount;
+      }
    }
 
    /// <summary>
