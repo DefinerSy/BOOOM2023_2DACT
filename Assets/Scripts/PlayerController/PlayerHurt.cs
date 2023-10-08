@@ -9,14 +9,6 @@ public class PlayerHurt : MonoBehaviour
 
     private Animator anim;
     public bool isHurt = false;
-
-    [Header("受伤时血条震动有关参数")] 
-    public GameObject hpBar;
-    public float time = 0f;
-    public int power = 0;
-    public int times = 0;
-    public int angle = 0;
-    
     private void Start()
     {
         PlayerCharacter = this?.GetComponent<PlayerCharacter>();
@@ -35,7 +27,6 @@ public class PlayerHurt : MonoBehaviour
         if (Damage > 0)
         {
             anim.SetTrigger("Hurt");
-            hpBar.transform.DOShakePosition(time, power, times, angle);
         }
         if (PlayerCharacter._currentHp <=0)
         {

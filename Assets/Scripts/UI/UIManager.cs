@@ -45,11 +45,12 @@ public class UIManager : MonoBehaviour
       }
    }
 
-   private void OnHealthEvent(Character character)
+   private void OnHealthEvent(Character character,int Damage)
    {
       float persentage = character._currentHp / character._maxHp;
-      playerStatBar.OnHealthChange(persentage);
+      playerStatBar.OnHealthChange(persentage,Damage);
    }
+   
    
    private void OnSkillUsedEvent(int usedskill)
    {
