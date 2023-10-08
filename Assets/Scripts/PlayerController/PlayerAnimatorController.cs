@@ -33,7 +33,6 @@ public class PlayerAnimatorController : MonoBehaviour
         spriteRend = GetComponentInChildren<SpriteRenderer>();
         anim = GetComponent<Animator>();
         rd2D = GetComponent<Rigidbody2D>();
-        
         _jumpParticle = jumpFX.GetComponent<ParticleSystem>();
         _landParticle = landFX.GetComponent<ParticleSystem>();
     }
@@ -79,7 +78,7 @@ public class PlayerAnimatorController : MonoBehaviour
         {
             anim.SetTrigger("Jump");
             anim.SetBool("Grounded",false);
-            GameObject obj = Instantiate(jumpFX, transform.position - (Vector3.up * transform.localScale.y / 3f), Quaternion.Euler(-90, 0, 0));
+            GameObject obj = Instantiate(jumpFX, transform.position - (Vector3.up * transform.localScale.y / 0.5f), Quaternion.Euler(-90, 0, 0));
             Destroy(obj, 1);
             startedJumping = false;
             return;
@@ -89,7 +88,7 @@ public class PlayerAnimatorController : MonoBehaviour
         if (justLanded)
         {
             anim.SetBool("Grounded",true);
-            GameObject obj = Instantiate(landFX, transform.position - (Vector3.up * transform.localScale.y / 3f), Quaternion.Euler(-90, 0, 0));
+            GameObject obj = Instantiate(landFX, transform.position - (Vector3.up * transform.localScale.y / 0.5f), Quaternion.Euler(-90, 0, 0));
             Destroy(obj, 1);
             justLanded = false;
             Debug.Log("Land");
