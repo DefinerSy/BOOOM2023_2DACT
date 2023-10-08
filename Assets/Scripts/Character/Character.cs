@@ -16,7 +16,7 @@ public class Character : MonoBehaviour
     [Header("角色属性")] [SerializeField] protected string _name;
     [SerializeField] public float _maxHp;
     [SerializeField] public float _currentHp;
-    [SerializeField] protected float _attackDamage;
+    [SerializeField] public int _attackDamage;
     [SerializeField] protected type _type;
     [Header("角色事件")]
     [SerializeField] public UnityEvent<Character> OnHealthChange;
