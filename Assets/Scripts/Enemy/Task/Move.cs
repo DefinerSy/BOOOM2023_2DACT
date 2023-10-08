@@ -5,9 +5,10 @@ using UnityEngine;
 public class Move : EnemyAction
 {
     public GameObject patrolPoint;
-    public float patrolSpeed;
+    public float moveSpeed;
     private Collider2D collider2D;
-    public SharedBool isTouchingPlayer=false;
+    public float distance=0.1f;
+    //public SharedBool isFoundPlayer=false;
     
      public override void OnAwake()
     {
@@ -17,39 +18,24 @@ public class Move : EnemyAction
     public override void OnStart()
     {
         Animator.Play("Walk");
-        isTouchingPlayer=false;
     }
     
 
     public override TaskStatus OnUpdate()
     {
-        gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position,
-            patrolPoint.transform.position, patrolSpeed * Time.deltaTime);
-        if(isTouchingPlayer.Value)
-        {
-            return TaskStatus.Failure;
-        }
-        if(Vector2.Distance(gameObject.transform.position, patrolPoint.transform.position) < 0.1f)
-        {
-            return TaskStatus.Success;
-        }
-        else
-        {
-            return TaskStatus.Running;
-        }
+        var position = gameObject.transform.position;
+        var position1 = patrolPoint.transform.position;
+        transform.localScale = position1.x > transform.position.x ? 
+            new Vector3(-1, 1, 1) : new Vector3(1, 1, 1);
+        position = Vector2.MoveTowards(position,
+            position1, moveSpeed * Time.deltaTime);
+        gameObject.transform.position = position;
+        // if(isFoundPlayer.Value)
+        // {
+        //     return TaskStatus.Failure;
+        // }
+        return Vector2.Distance(position, position1) < distance ? TaskStatus.Success : TaskStatus.Running;
         
     }
     
-    public override void OnEnd()
-    {
-        //Animator.Play("Turn");
-    }
-
-    public override void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            isTouchingPlayer = true;
-        }
-    }
 }
