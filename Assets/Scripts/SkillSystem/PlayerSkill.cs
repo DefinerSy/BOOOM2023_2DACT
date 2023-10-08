@@ -17,13 +17,15 @@ public class PlayerSkill : MonoBehaviour
 {
     [Header("技能资源")] 
     public List<SkillData> allSkills;
-    public List<Image> skillUi;
+
 
     [Header("预备技能")] public List<SkillData> skillList;
     public int skillNumber = 4;
     
-    [Header("技能事件")]
+    [Header("技能重置事件")]
     public UnityEvent<List<SkillData>> OnSkillReady;
+    [Header("技能释放事件")]
+    public UnityEvent<int> OnSkillUsed;
     
     /// <summary>
     /// 随机获取技能
@@ -63,15 +65,11 @@ public class PlayerSkill : MonoBehaviour
     {
         skillList = GetSkill();
         OnSkillReady?.Invoke(skillList);
-        for (int i = 0; i < skillUi.Count; i++) //todo:这个方法可以UI参考,UI写完后这里记得和变量一起删掉
-        {
-            skillUi[i].sprite = skillList[i].skillIcon;
-        }
+        
     }
 
     private void Start()
     {
-        skillNumber = skillUi.Count;
         ResetSkillIcon();
     }
 
@@ -82,28 +80,36 @@ public class PlayerSkill : MonoBehaviour
     {
         if (skillList.Count > 0)
         {
-            if (Input.GetKeyDown(KeyCode.J) && skillList[0] != null)
+            if(Input.GetKey(KeyCode.Semicolon))
             {
-                Debug.Log(skillList[0].skillName + " is Used");
-                //skillList[0].skillAnimationName = "Attack1";
-            }
+                //传递按下特殊键
+                if (Input.GetKeyDown(KeyCode.J) && skillList[0] != null)
+                {
+                    OnSkillUsed?.Invoke(0);
+                    Debug.Log(skillList[0].skillName + " is Used");
+                    //skillList[0].skillAnimationName = "Attack1";
+                }
 
-            if (Input.GetKeyDown(KeyCode.I) && skillList[1] != null)
-            {
-                Debug.Log(skillList[1].skillName + " is Used");
-                //skillList[1].skillAnimationName = "Attack2";
-            }
+                if (Input.GetKeyDown(KeyCode.I) && skillList[1] != null)
+                {
+                    OnSkillUsed?.Invoke(1);
+                    Debug.Log(skillList[1].skillName + " is Used");
+                    //skillList[1].skillAnimationName = "Attack2";
+                }
 
-            if (Input.GetKeyDown(KeyCode.L) && skillList[2] != null)
-            {
-                Debug.Log(skillList[2].skillName + " is Used");
-                //skillList[2].skillAnimationName = "Attack3";
-            }
+                if (Input.GetKeyDown(KeyCode.L) && skillList[2] != null)
+                {
+                    OnSkillUsed?.Invoke(2);
+                    Debug.Log(skillList[2].skillName + " is Used");
+                    //skillList[2].skillAnimationName = "Attack3";
+                }
 
-            if (Input.GetKeyDown(KeyCode.K) && skillList[3] != null)
-            {
-                Debug.Log(skillList[3].skillName + " is Used");
-                //skillList[3].skillAnimationName = "Attack4";
+                if (Input.GetKeyDown(KeyCode.K) && skillList[3] != null)
+                {
+                    OnSkillUsed?.Invoke(3);
+                    Debug.Log(skillList[3].skillName + " is Used");
+                    //skillList[3].skillAnimationName = "Attack4";
+                }
             }
         }
     }

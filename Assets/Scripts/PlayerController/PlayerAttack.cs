@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -11,7 +9,7 @@ public class PlayerAttack : MonoBehaviour
     
     [Header("攻击间隔")] 
     [SerializeField] private float _attackCd;
-    [SerializeField] private bool _isAttacking;
+    [SerializeField] public bool _isAttacking;
 
     [Header("攻击硬直")] 
     [SerializeField] private float _attackRecoveryTime;
@@ -34,7 +32,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.J) && m_timeSinceAttack > _attackCd)
+        if (Input.GetKeyDown(KeyCode.J) && m_timeSinceAttack > _attackCd && !Input.GetKey(KeyCode.Semicolon))
         {
             m_currentAttack++;
 
@@ -80,7 +78,6 @@ public class PlayerAttack : MonoBehaviour
 
     public void AttackOver()
     {
-        _isrecovery = false;
         _isAttacking = false;
     }
 }

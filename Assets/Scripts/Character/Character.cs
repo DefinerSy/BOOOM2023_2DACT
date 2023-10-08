@@ -19,7 +19,7 @@ public class Character : MonoBehaviour
     [SerializeField] public int _attackDamage;
     [SerializeField] protected type _type;
     [Header("角色事件")]
-    [SerializeField] public UnityEvent<Character> OnHealthChange;
+    [SerializeField] public UnityEvent<Character,int> OnHealthChange;
     bool isDie = false;
 
     protected virtual void Start()
@@ -49,7 +49,7 @@ public class Character : MonoBehaviour
     {
         Debug.Log("HP:"+_currentHp+"->"+(_currentHp-Damage));
         _currentHp -= Damage;
-        OnHealthChange?.Invoke(this);
+        OnHealthChange?.Invoke(this,Damage);
         
     }
 }

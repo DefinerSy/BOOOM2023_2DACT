@@ -16,8 +16,8 @@ MonoBehaviour:
   skillName: Horse
   skillDescription: 
   skillIcon: {fileID: 21300000, guid: 62d820d09d6917246a07e60b0872182e, type: 3}
-  skillChance: 50
+  skillAnimationName: Skill_Animation_Horse
   skillFrontPoint: 2
   skillBackPoint: 0
-  skillAnimationName: Skill_Animation_Horse
   skillDamage: 0
+  skillChance: 50

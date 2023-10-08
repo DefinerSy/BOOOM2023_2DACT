@@ -1,3 +1,4 @@
+using DG.Tweening;
 using QFSW.QC;
 using UnityEngine;
 
@@ -8,7 +9,6 @@ public class PlayerHurt : MonoBehaviour
 
     private Animator anim;
     public bool isHurt = false;
-    
     private void Start()
     {
         PlayerCharacter = this?.GetComponent<PlayerCharacter>();
@@ -24,7 +24,10 @@ public class PlayerHurt : MonoBehaviour
     {
         isHurt = true;
         PlayerCharacter.HealthIsChange(Damage);
-        anim.SetTrigger("Hurt");
+        if (Damage > 0)
+        {
+            anim.SetTrigger("Hurt");
+        }
         if (PlayerCharacter._currentHp <=0)
         {
             Die();

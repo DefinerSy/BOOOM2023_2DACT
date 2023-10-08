@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "技能")] //创建新的游戏技
@@ -6,6 +7,7 @@ public class SkillData : ScriptableObject
     [Header("技能描述")] 
     public float skillID;
     public string skillName;
+    [TextArea(3, 10)]
     public string skillDescription;
 
     [Header("技能相关资源")] 
@@ -18,3 +20,17 @@ public class SkillData : ScriptableObject
     public int skillDamage;
     public float skillChance;
 }
+#if UNITY_EDITOR
+    [CustomEditor(typeof(SkillData))]
+    public class SkillDataEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            SkillData skillData = (SkillData) target;
+            EditorGUILayout.LabelField("技能数据："+skillData.skillName.ToUpper(), 
+                EditorStyles.boldLabel);
+            EditorGUILayout.Space(10);
+            base.OnInspectorGUI();
+        }
+    }
+#endif
