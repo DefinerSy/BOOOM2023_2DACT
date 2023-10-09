@@ -26,13 +26,14 @@ public class PlayerDashbar : MonoBehaviour
 
         if (beginCD)
         {
-            OnDashUsed(cdTime);
+            
+            dashImage.fillAmount += Time.deltaTime / cdTime;
         }
     }
 
     public void OnDashUsed(float time)
     {
-        dashImage.fillAmount += Time.deltaTime / time;
-        Debug.Log(dashImage.fillAmount);
+        cdTime = time;
+        beginCD = true;
     }
 }
