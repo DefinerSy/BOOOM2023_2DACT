@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnermyCharacter : Character
@@ -10,5 +11,10 @@ public class EnermyCharacter : Character
     {
         base.Start();
         _currentPosture = _maxPosture;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        
     }
 }
