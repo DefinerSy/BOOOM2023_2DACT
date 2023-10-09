@@ -19,6 +19,9 @@ public class PlayerAnimatorController : MonoBehaviour
     [SerializeField] private GameObject landFX;
     private ParticleSystem _jumpParticle;
     private ParticleSystem _landParticle;
+    
+    [Header("Run Speed")]
+    [SerializeField] private float runSpeed;
 
     //State
     public bool startedJumping {  private get; set; }
@@ -103,7 +106,14 @@ public class PlayerAnimatorController : MonoBehaviour
         
         if (Mathf.Abs(mov.RB.velocity.x) > Mathf.Epsilon)
         {
-            anim.SetInteger("AnimState", 1);
+            if (Mathf.Abs(mov.RB.velocity.x)<Mathf.Abs(runSpeed))
+            {
+               anim.SetInteger("AnimState", 2);
+            }
+            else
+            {
+                anim.SetInteger("AnimState", 1);
+            }
         }
         else
         {

@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
 	#region INPUT PARAMETERS
 	public Vector2 _moveInput;
-
+	public bool canMove { get; set; }
 	public float LastPressedJumpTime { get; private set; }
 	public float LastPressedDashTime { get; private set; }
 	#endregion
@@ -91,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Update()
 	{
+		
         #region TIMERS
         LastOnGroundTime -= Time.deltaTime;
 		LastOnWallTime -= Time.deltaTime;
@@ -102,9 +103,18 @@ public class PlayerMovement : MonoBehaviour
 		#endregion
 
 		#region INPUT HANDLER
-		_moveInput.x = Input.GetAxisRaw("Horizontal");
-		_moveInput.y = Input.GetAxisRaw("Vertical");
 
+		if (canMove)
+		{
+			_moveInput.x = Input.GetAxisRaw("Horizontal");
+			_moveInput.y = Input.GetAxisRaw("Vertical");
+		}
+		else
+		{
+			_moveInput.x = Input.GetAxisRaw("Horizontal")*0.2f;
+			_moveInput.y = Input.GetAxisRaw("Vertical");
+		}
+		
 		if (_moveInput.x != 0)
 			CheckDirectionToFace(_moveInput.x > 0);
 
@@ -590,4 +600,3 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 }
 
-// created by Dawnosaur :D

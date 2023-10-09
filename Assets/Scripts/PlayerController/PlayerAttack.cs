@@ -18,11 +18,12 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-        PlayerMovement = this?.GetComponent<PlayerMovement>();
+        PlayerMovement = GetComponent<PlayerMovement>();
     }
 
     private void Update()
     {
+        PlayerMovement.canMove= !_isAttacking;
         Attack();
         AttackRecovery();
         m_timeSinceAttack += Time.deltaTime;

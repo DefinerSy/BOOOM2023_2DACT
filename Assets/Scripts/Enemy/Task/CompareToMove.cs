@@ -27,7 +27,7 @@ public class CompareToMove :EnemyAction
         }
         transform.localScale = target.transform.position.x > transform.position.x ? new Vector3(-1, 1, 1) : new Vector3(1, 1, 1);
         gameObject.transform.position = Vector2.MoveTowards(transform.position,
-            target.transform.position, moveSpeed * Time.deltaTime);
+            new Vector2(target.transform.position.x,transform.position.y), moveSpeed * Time.deltaTime);
         return TaskStatus.Running;
     }
     
