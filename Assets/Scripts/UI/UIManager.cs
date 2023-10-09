@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+   public float dashCDTime;
    
    [Header("UI对象")]
    public PlayerStatBar playerStatBar;
+   public PlayerDashbar playerDashbar;
    public List<Image> skilluis;
 
    [Header("动画")] 
@@ -17,6 +19,8 @@ public class UIManager : MonoBehaviour
    [Header("事件监听")] 
    public CharacterEvent healthEvent;
 
+   public CharacterEvent characterDashEvent;
+
    public SkillEvent skillResetEvent;
 
    public SkillEvent skillUsedEvent;
@@ -24,6 +28,7 @@ public class UIManager : MonoBehaviour
    private void OnEnable()
    {
       healthEvent.OnEventRaised += OnHealthEvent;
+      characterDashEvent.OnDashRaised += OnDashEvent;
       skillResetEvent.OnEventRaised += OnSkillResetEvent;
       skillUsedEvent.OnSkillUse += OnSkillUsedEvent;
    }
@@ -31,13 +36,20 @@ public class UIManager : MonoBehaviour
    private void OnDisable()
    {
       healthEvent.OnEventRaised -= OnHealthEvent;
+      characterDashEvent.OnDashRaised -= OnDashEvent;
       skillResetEvent.OnEventRaised -= OnSkillResetEvent;
       skillUsedEvent.OnSkillUse -= OnSkillUsedEvent;
    }
 
+   private void OnDashEvent()
+   {
+      playerDashbar.OnDashUsed(dashCDTime);
+      //Debug.Log(playerDashbar.dashImage.fillAmount);
+   }
+
    private void OnSkillResetEvent(List<SkillData> skillList)
    {
-      resetanim.Play("SkillReset");
+      resetanim.Play("SkillReset1");
       for (int i = 0; i < skilluis.Count; i++)
       {
          skilluis[i].gameObject.GetComponent<Button>().interactable = true;
@@ -62,12 +74,12 @@ public class UIManager : MonoBehaviour
    {
       if (Input.GetKeyDown(KeyCode.Semicolon) && !isbig)
       {
-         resetanim.Play("OnSkill");
+         resetanim.Play("OnSkill1");
          isbig = true;
       }
       else if(Input.GetKeyUp(KeyCode.Semicolon))
       {
-         resetanim.Play("OutSkill");
+         resetanim.Play("OutSkill1");
          isbig = false;
       }
    }

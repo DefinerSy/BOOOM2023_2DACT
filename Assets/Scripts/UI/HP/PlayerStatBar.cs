@@ -32,6 +32,7 @@ public class PlayerStatBar : MonoBehaviour
       {
          hpDelayImage.fillAmount = hpImage.fillAmount;
       }
+      
    }
 
    /// <summary>
