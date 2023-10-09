@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
    private void OnDashEvent()
    {
       playerDashbar.OnDashUsed(dashCDTime);
-      
+
       //Debug.Log(playerDashbar.dashImage.fillAmount);
    }
 

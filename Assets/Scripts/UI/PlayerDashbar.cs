@@ -12,7 +12,8 @@ public class PlayerDashbar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dashImage.fillAmount = 0;
+        dashImage.fillAmount = 1;
+        beginCD = true;
     }
 
     // Update is called once per frame
@@ -26,7 +27,6 @@ public class PlayerDashbar : MonoBehaviour
 
         if (beginCD)
         {
-            
             dashImage.fillAmount += Time.deltaTime / cdTime;
         }
     }
@@ -34,6 +34,10 @@ public class PlayerDashbar : MonoBehaviour
     public void OnDashUsed(float time)
     {
         cdTime = time;
-        beginCD = true;
+        //beginCD = true;
+        if (dashImage.fillAmount == 1)
+        {
+            beginCD = false;
+        }
     }
 }

@@ -14179,7 +14179,7 @@ PrefabInstance:
     - target: {fileID: 3437468742417109852, guid: 3a049950524ba7b4aad48649655c3987,
         type: 3}
       propertyPath: dashCDTime
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9130249900349524450, guid: 3a049950524ba7b4aad48649655c3987,
         type: 3}
@@ -14456,8 +14456,8 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.7
-  gizmoViewMode: 2
-  showBehaviorDesignerGizmo: 1
+  gizmoViewMode: 0
+  showBehaviorDesignerGizmo: 0
 --- !u!50 &1433904941279811670
 Rigidbody2D:
   serializedVersion: 4
@@ -14565,7 +14565,7 @@ MonoBehaviour:
   _name: Pawn
   _maxHp: 100
   _currentHp: 0
-  _attackDamage: 10
+  _attackDamage: 0
   _type: 1
   OnHealthChange:
     m_PersistentCalls:
