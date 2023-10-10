@@ -6,9 +6,8 @@ public class EnemyBarFollow : MonoBehaviour
 {
     public GameObject enemy;
 
-    public GameObject enemyBar;
-
     public float y;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +17,6 @@ public class EnemyBarFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemyBar.transform.position = enemy.transform.position + new Vector3(0,y);
+        gameObject.transform.position = enemy.transform.position + new Vector3(0,y);
     }
 }
