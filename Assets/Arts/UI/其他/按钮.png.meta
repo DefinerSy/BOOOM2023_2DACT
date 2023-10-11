@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9207f8e3c87ab2c4aac0a9de26fb6916
+guid: c8343c57becfe334393f93096a7b696d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg_xuetiao_me_2_0
+      name: "\u6309\u94AE_0"
       rect:
         serializedVersion: 2
-        x: 9
-        y: 9
-        width: 16
-        height: 16
+        x: 22
+        y: 590
+        width: 714
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57d301145fe45414a8bc20191e99f5a9
-      internalID: -793468217
+      spriteID: b3aa228bc432f774690bd8ec9b1f6183
+      internalID: -1786259276
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bg_xuetiao_me_2_0: -793468217
+      "\u6309\u94AE_0": -1786259276
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

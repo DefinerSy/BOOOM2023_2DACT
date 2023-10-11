@@ -7,7 +7,7 @@ public class PlayerDashbar : MonoBehaviour
 {
     public Image dashImage;
     public bool beginCD;
-    public float cdTime;
+    public float cdTime = 1f;
     
     // Start is called before the first frame update
     void Start()
