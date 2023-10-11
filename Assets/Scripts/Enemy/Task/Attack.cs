@@ -5,6 +5,12 @@ using UnityEngine;
 public class Attack : EnemyAction
 {
     private AnimatorStateInfo stateInfo;
+    
+    public override void OnStart()
+    {
+        base.OnStart();
+        Animator.SetBool("isAttack",true);
+    }
     public override TaskStatus OnUpdate()
     {
         stateInfo = Animator.GetCurrentAnimatorStateInfo(0);
@@ -18,5 +24,10 @@ public class Attack : EnemyAction
             return TaskStatus.Running;
         }
 
+    }
+    
+    public override void OnEnd()
+    {
+        Animator.SetBool("isAttack",false);
     }
 }
