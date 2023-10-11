@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: df249cf47063cbf44b4a6c38f315362c
+guid: 560ea217efb446b409d481932c7a96cd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: anim_pawn_die_0
+      name: anim_player_die_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0fbc72b41230354f86e64af600b2b8e
-      internalID: -592444654
+      spriteID: 1e13f24684a4f6749af90fd1a39b9755
+      internalID: 873430418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_pawn_die_1
+      name: anim_player_die_1
       rect:
         serializedVersion: 2
         x: 300
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62bc220dc293e2542b76a158b1e1fe4d
-      internalID: 123403859
+      spriteID: 5d2041cd3a303b443bfbfa3f364925d3
+      internalID: -1957839034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_pawn_die_2
+      name: anim_player_die_2
       rect:
         serializedVersion: 2
         x: 600
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04509ad0093b20a4faa8b98ebdc78867
-      internalID: 1972363368
+      spriteID: 5e3fb45eb6de21a4b90038061c827e3c
+      internalID: -828544060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_pawn_die_3
+      name: anim_player_die_3
       rect:
         serializedVersion: 2
         x: 900
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60c9e730aafcacb4abeed5d0ee9b1b22
-      internalID: -114566728
+      spriteID: 8700b22573bb3b84b94ad162e6817fae
+      internalID: -643240074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_pawn_die_4
+      name: anim_player_die_4
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ae9de2275719cb4ba9e2da2d338a195
-      internalID: 914949270
+      spriteID: 7ee9b591d04f67d41a7e90f7da2bec72
+      internalID: 913219262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_pawn_die_5
+      name: anim_player_die_5
       rect:
         serializedVersion: 2
         x: 300
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c38b91039fa2b1a4a99b672aad8a76e9
-      internalID: 862771253
+      spriteID: ff2fa17c49ce8934192785b0e1c07324
+      internalID: 864673980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_pawn_die_6
+      name: anim_player_die_6
       rect:
         serializedVersion: 2
         x: 600
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f495372f3f411740beb62642689838e
-      internalID: 595944058
+      spriteID: 602d7f5356802cc48b6300e2406da3bb
+      internalID: 2028894383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_pawn_die_7
+      name: anim_player_die_7
       rect:
         serializedVersion: 2
         x: 900
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c3dd22fedd1568459172e22031910a9
-      internalID: 1058472689
+      spriteID: aea1701c0f93d1d4cab8bad2ac8029f9
+      internalID: -155721916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_pawn_die_8
+      name: anim_player_die_8
       rect:
         serializedVersion: 2
         x: 0
@@ -292,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f73df94b9be48bc409ca781849cd8f51
-      internalID: -1298489666
+      spriteID: b76f60066aad0d744b0e3c930f20b4e1
+      internalID: -410824243
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: anim_pawn_die_9
+      name: anim_player_die_9
       rect:
         serializedVersion: 2
         x: 300
@@ -313,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07e263dfa8adae2468fdfaded918307a
-      internalID: 1946861945
+      spriteID: 53759fe0952bb404b9315c4f745a5133
+      internalID: -672106640
       vertices: []
       indices: 
       edges: []
@@ -322,7 +322,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7240cb6287e40514fbf225a6d1048836
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -330,16 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      anim_pawn_die_0: -592444654
-      anim_pawn_die_1: 123403859
-      anim_pawn_die_2: 1972363368
-      anim_pawn_die_3: -114566728
-      anim_pawn_die_4: 914949270
-      anim_pawn_die_5: 862771253
-      anim_pawn_die_6: 595944058
-      anim_pawn_die_7: 1058472689
-      anim_pawn_die_8: -1298489666
-      anim_pawn_die_9: 1946861945
+      anim_player_die_0: 873430418
+      anim_player_die_1: -1957839034
+      anim_player_die_2: -828544060
+      anim_player_die_3: -643240074
+      anim_player_die_4: 913219262
+      anim_player_die_5: 864673980
+      anim_player_die_6: 2028894383
+      anim_player_die_7: -155721916
+      anim_player_die_8: -410824243
+      anim_player_die_9: -672106640
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

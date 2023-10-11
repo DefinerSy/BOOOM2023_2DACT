@@ -140,12 +140,12 @@ public class PlayerMovement : MonoBehaviour
 			//Ground Check
 			if (Physics2D.OverlapBox(_groundCheckPoint.position, _groundCheckSize, 0, _groundLayer)) //checks if set box overlaps with ground
 			{
-				if(LastOnGroundTime < -0.1f)
+				if(LastOnGroundTime < -0.01f)
                 {
 					AnimHandler.justLanded = true;
 					Attack._isAttacking = false;
                 }
-
+				
 				LastOnGroundTime = Data.coyoteTime; //if so sets the lastGrounded to coyoteTime
             }		
 

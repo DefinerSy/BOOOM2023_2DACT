@@ -84,8 +84,6 @@ public class PlayerAnimatorController : MonoBehaviour
             GameObject obj = Instantiate(jumpFX, transform.position - (Vector3.up * transform.localScale.y / 0.5f), Quaternion.Euler(-90, 0, 0));
             Destroy(obj, 1);
             startedJumping = false;
-            return;
-            
         }
 
         if (justLanded)
@@ -95,12 +93,13 @@ public class PlayerAnimatorController : MonoBehaviour
             Destroy(obj, 1);
             justLanded = false;
             Debug.Log("Land");
-            return;
+            
         }
 
         if (dashing)
         {
             anim.SetTrigger("Roll");
+            anim.SetBool("Grounded",true);
             dashing = false;
         }
         
@@ -115,7 +114,7 @@ public class PlayerAnimatorController : MonoBehaviour
                 anim.SetInteger("AnimState", 1);
             }
         }
-        else
+        else if(Mathf.Abs(mov.RB.velocity.x) < Mathf.Epsilon)
         {
             anim.SetInteger("AnimState", 0);
         }
