@@ -15,7 +15,7 @@ public class EnermyCharacter : Character
     }
     
     [Command]
-    public void EnemyHurt()
+    public void EnemyHurt(int Damage)
     {
         _animator.Play("Hurt");
     }

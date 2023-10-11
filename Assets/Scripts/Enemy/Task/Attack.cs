@@ -19,10 +19,12 @@ public class Attack : EnemyAction
         {
             return TaskStatus.Success;
         }
-        else
+        if(stateInfo.IsName("Hurt"))
         {
             return TaskStatus.Running;
         }
+
+        return TaskStatus.Running;
 
     }
     

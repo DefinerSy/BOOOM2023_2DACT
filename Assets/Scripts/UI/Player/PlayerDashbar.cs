@@ -25,7 +25,7 @@ public class PlayerDashbar : MonoBehaviour
             beginCD = true;
         }
 
-        if (beginCD)
+        if (beginCD && cdTime!=0)
         {
             dashImage.fillAmount += Time.deltaTime / cdTime;
         }

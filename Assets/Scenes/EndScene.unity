@@ -415,6 +415,43 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.8113208
       objectReference: {fileID: 0}
+    - target: {fileID: 3071713614144672235, guid: 6b65b27a34ff08f4fb672191a7825592,
+        type: 3}
+      propertyPath: m_Text
+      value: "\u4E3B\u7A0B/TA\uFF1A\u5C18\u8072\n\u7F8E\u672F\uFF1A\u5BD2\u9E73\n\u7A0B\u5E8F\uFF1AHermitL\n\u7A0B\u5E8F\uFF1A\u51B7\u537B\u6DB2"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071713614144672235, guid: 6b65b27a34ff08f4fb672191a7825592,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 32c1196d211019546904eb4ea3890aec,
+        type: 3}
+    - target: {fileID: 3071713614144672235, guid: 6b65b27a34ff08f4fb672191a7825592,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 78
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071713614144672235, guid: 6b65b27a34ff08f4fb672191a7825592,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 62
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071713614144672235, guid: 6b65b27a34ff08f4fb672191a7825592,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404837443421655836, guid: 6b65b27a34ff08f4fb672191a7825592,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 552b126782411d84fbf3cfd2a5fe9c77,
+        type: 3}
+    - target: {fileID: 3404837443421655836, guid: 6b65b27a34ff08f4fb672191a7825592,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3739031912366283486, guid: 6b65b27a34ff08f4fb672191a7825592,
         type: 3}
       propertyPath: m_Pivot.x
