@@ -1,3 +1,4 @@
+using BehaviorDesigner.Runtime;
 using QFSW.QC;
 using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
@@ -7,13 +8,13 @@ public class EnermyCharacter : Character
     [SerializeField] float _maxPosture;
     [SerializeField] float _currentPosture;
     private Animator _animator;
-    private Behaviour _behaviour;
+    private BehaviorTree _behaviour;
     protected override void Start()
     {
         _animator = GetComponentInChildren<Animator>();
         base.Start();
         _currentPosture = _maxPosture;
-        _behaviour=GetComponentInParent<Behaviour>();
+        _behaviour=GetComponentInParent<BehaviorTree>();
     }
     
     
@@ -26,9 +27,18 @@ public class EnermyCharacter : Character
 
     protected override void CharacterDie()
     {
-        base.CharacterDie();
-        _animator.Play("Die");
-        _behaviour.enabled = false;
+        if (_currentHp <= 0 && !isDie)
+        {
+            Debug.Log(_name + "Die");
+            isDie = true;
+            _animator.Play("Die");
+            _behaviour.enabled = false;
+        }
+        else if(_currentHp>0 && isDie)
+        {
+            isDie = false;
+        }
+        
     }
     
     

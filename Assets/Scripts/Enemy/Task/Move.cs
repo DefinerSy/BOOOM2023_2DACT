@@ -6,14 +6,14 @@ public class Move : EnemyAction
 {
     public GameObject patrolPoint;
     public float moveSpeed;
-    private Collider2D collider2D;
+    //private Collider2D collider2D;
     public float distance=0.1f;
     //public SharedBool isFoundPlayer=false;
     private AnimatorStateInfo stateInfo;
      public override void OnAwake()
     {
         base.OnAwake();
-        collider2D = gameObject.GetComponentInChildren<Collider2D>();
+        //collider2D = gameObject.GetComponentInChildren<Collider2D>();
     }
     public override void OnStart()
     {

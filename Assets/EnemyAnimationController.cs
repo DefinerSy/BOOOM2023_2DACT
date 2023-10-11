@@ -15,6 +15,6 @@ public class EnemyAnimationController : MonoBehaviour
     
     public void DieAnimationEnd()
     {
-        Destroy(gameObject);
+        Destroy(_character);
     }
 }
