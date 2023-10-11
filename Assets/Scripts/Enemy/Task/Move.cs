@@ -17,6 +17,7 @@ public class Move : EnemyAction
     }
     public override void OnStart()
     {
+        Animator.SetBool("isWalk",true);
         Animator.Play("Walk");
     }
     
@@ -46,6 +47,11 @@ public class Move : EnemyAction
         gameObject.transform.position = position;
         return Vector2.Distance(position, transformPosition) < distance ? TaskStatus.Success : TaskStatus.Running;
         
+    }
+    
+    public override void OnEnd()
+    {
+        Animator.SetBool("isWalk",false);
     }
     
 }
