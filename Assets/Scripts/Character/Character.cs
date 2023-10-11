@@ -34,7 +34,7 @@ public class Character : MonoBehaviour
         CharacterDie();
     }
 
-    protected void CharacterDie()
+    protected virtual void CharacterDie()
     {
         if (_currentHp <= 0 && !isDie)
         {

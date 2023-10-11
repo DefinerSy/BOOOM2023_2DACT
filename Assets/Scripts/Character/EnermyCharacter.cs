@@ -19,4 +19,15 @@ public class EnermyCharacter : Character
     {
         _animator.Play("Hurt");
     }
+
+    protected override void CharacterDie()
+    {
+        base.CharacterDie();
+        _animator.Play("Die");
+    }
+    
+    public void DieAnimationEnd()
+    {
+        Destroy(gameObject);
+    }
 }
