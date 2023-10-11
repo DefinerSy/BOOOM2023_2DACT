@@ -14,6 +14,8 @@ public class EnermyCharacter : Character
         _currentPosture = _maxPosture;
     }
     
+    
+    
     [Command]
     public void EnemyHurt(int Damage)
     {
@@ -26,8 +28,5 @@ public class EnermyCharacter : Character
         _animator.Play("Die");
     }
     
-    public void DieAnimationEnd()
-    {
-        Destroy(gameObject);
-    }
+    
 }

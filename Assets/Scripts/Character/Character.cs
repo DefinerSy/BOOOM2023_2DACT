@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public enum type
 {
     Player,
-    Enermy //可以添加更多种类，不知道有没有用反正写着先
+    Enemy //可以添加更多种类，不知道有没有用反正写着先
 };
 
 
@@ -21,7 +21,7 @@ public class Character : MonoBehaviour
     [Header("角色事件")]
     [SerializeField] 
     public UnityEvent<Character,int> OnHealthChange;
-    bool isDie = false;
+    public bool isDie = false;
 
     protected virtual void Start()
     {

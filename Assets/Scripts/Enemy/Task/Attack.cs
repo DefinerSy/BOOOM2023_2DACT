@@ -14,7 +14,7 @@ public class Attack : EnemyAction
     public override TaskStatus OnUpdate()
     {
         stateInfo = Animator.GetCurrentAnimatorStateInfo(0);
-        if(stateInfo.IsName("Hurt"))
+        if(stateInfo.IsName("Hurt")||stateInfo.IsName("Die"))
         {
             return TaskStatus.Running;
         }
