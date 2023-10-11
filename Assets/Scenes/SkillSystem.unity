@@ -214,7 +214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &15321996
 Transform:
   m_ObjectHideFlags: 0
@@ -9896,16 +9896,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   postureImage: {fileID: 1878350972}
-  postureMax: 100
+  postureMax: 0
   postureCurrent: 0
   isHurt: 0
-  postureDamage: 10
-  timeToRecover: 3
-  recoverSpeed: 50
-  time: 1
-  power: 10
-  times: 20
-  angle: 1
+  postureDamage: 0
+  timeToRecover: 0
+  recoverSpeed: 0
+  time: 0
+  power: 0
+  times: 0
+  angle: 0
 --- !u!1 &825743065
 GameObject:
   m_ObjectHideFlags: 0
@@ -10374,7 +10374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &885586206
 Transform:
   m_ObjectHideFlags: 0
@@ -13704,14 +13704,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpImage: {fileID: 969397309}
   hpDelayImage: {fileID: 689162502}
-  hpMax: 100
+  hpMax: 0
   hpCurrent: 0
-  hpRefuseSpeed: 0.1
+  hpRefuseSpeed: 1
   isHurtHP: 0
-  HPDamge: 10
-  time: 1
-  power: 10
-  times: 15
+  HPDamge: 0
+  time: 0
+  power: 0
+  times: 0
   angle: 0
 --- !u!1 &1750025377
 GameObject:
@@ -14771,12 +14771,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1504031890, guid: 11c22aa72abe9684b9768872676d26bb, type: 3}
+  m_Sprite: {fileID: 2132372238, guid: fce0f0656cb32214781be78afd93c884, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.64, y: 1.27}
+  m_Size: {x: 5, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -14868,7 +14868,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.9193428, y: 0}
+  m_Offset: {x: -1.8200016, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -14879,7 +14879,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5310435, y: 1}
+  m_Size: {x: 2.3257694, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &2058588772
 MonoBehaviour:
@@ -15154,20 +15154,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 318899764235797824, guid: 3a049950524ba7b4aad48649655c3987,
-        type: 3}
-      propertyPath: cdTime
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 809521932365704955, guid: 3a049950524ba7b4aad48649655c3987,
         type: 3}
       propertyPath: m_Name
       value: Canvas (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3437468742417109852, guid: 3a049950524ba7b4aad48649655c3987,
-        type: 3}
-      propertyPath: dashCDTime
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9130249900349524450, guid: 3a049950524ba7b4aad48649655c3987,
         type: 3}
@@ -15436,11 +15426,10 @@ MonoBehaviour:
       startIndex: 
       variableStartIndex: 
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(815.8201,-320.759766)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-3.67033,276.280457)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(13.3887634,137.46048)"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-471.253,250.10112)"},"ID":3,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.HasEnteredTrigger2D","NodeData":{"Offset":"(-292.90683,264.341583)"},"ID":4,"Name":"Has
-        Entered Trigger 2 D","Instant":true,"SharedStringtag":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Player"},"SharedGameObjectotherGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null}},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(145.0664,274.306519)"},"ID":5,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-7.61903,124.285713)"},"ID":6,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-310.918854,168.0205)"},"ID":7,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"CompareDistance","NodeData":{"Offset":"(-710.586,433.0436)"},"ID":8,"Name":"Compare
-        Distance","Instant":true,"GameObjecttarget":0,"SharedFloatdistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":2}},{"Type":"FacePoint","NodeData":{"Offset":"(-581.636,425.1001)"},"ID":9,"Name":"Face
-        Point","Instant":true,"GameObjectpoint":1},{"Type":"Attack","NodeData":{"Offset":"(-416.1905,421.304474)"},"ID":10,"Name":"Attack","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(-256.1905,414.782684)"},"ID":11,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1.3},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityAnimator.Play","NodeData":{"Offset":"(-84.78264,423.043579)"},"ID":12,"Name":"Play","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":2},"SharedStringstateName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Idle"},"Int32layer":-1,"SinglenormalizedTime":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(128.26088,418.695343)"},"ID":13,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(31.1465721,177.3783)"},"ID":14,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"CompareToMove","NodeData":{"Offset":"(29.8214,178.2096)"},"ID":15,"Name":"Compare
-        To Move","Instant":true,"GameObjecttarget":3,"SharedFloatdistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":2},"SinglemaxDistance":15,"SinglemoveSpeed":2}]}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(469.3726,228.6539)"},"ID":16,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"Move","NodeData":{"Offset":"(-241.156464,287.484863)"},"ID":17,"Name":"Move","Instant":true,"GameObjectpatrolPoint":4,"SinglemoveSpeed":1,"Singledistance":0.1},{"Type":"FacePoint","NodeData":{"Offset":"(-65.8975754,291.40097)"},"ID":18,"Name":"Face
-        Point","Instant":true,"GameObjectpoint":5},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityAnimator.Play","NodeData":{"Offset":"(82.99774,283.322174)"},"ID":19,"Name":"Play","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":6},"SharedStringstateName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Idle"},"Int32layer":-1,"SinglenormalizedTime":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(263.761719,283.6154)"},"ID":20,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"Move","NodeData":{"Offset":"(417.777771,280)"},"ID":21,"Name":"Move","Instant":true,"GameObjectpatrolPoint":7,"SinglemoveSpeed":1,"Singledistance":0.1},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityAnimator.Play","NodeData":{"Offset":"(582.7771,290)"},"ID":22,"Name":"Play","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":8},"SharedStringstateName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Idle"},"Int32layer":-1,"SinglenormalizedTime":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(712.7771,276.1111)"},"ID":23,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]}]}]}}'
+        Entered Trigger 2 D","Instant":true,"SharedStringtag":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Player"},"SharedGameObjectotherGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null}},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(145.0664,274.306519)"},"ID":5,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-24.28569,107.619049)"},"ID":6,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-310.918854,168.0205)"},"ID":7,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"CompareDistance","NodeData":{"Offset":"(-607.137634,433.0436)"},"ID":8,"Name":"Compare
+        Distance","Instant":true,"GameObjecttarget":0,"SharedFloatdistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":2}},{"Type":"FacePoint","NodeData":{"Offset":"(-426.4636,425.1001)"},"ID":9,"Name":"Face
+        Point","Instant":true,"GameObjectpoint":1},{"Type":"Attack","NodeData":{"Offset":"(-283.7768,441.304443)"},"ID":10,"Name":"Attack","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityAnimator.Play","NodeData":{"Offset":"(-107.541245,463.043518)"},"ID":11,"Name":"Play","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":2},"SharedStringstateName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Idle"},"Int32layer":-1,"SinglenormalizedTime":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(68.2609253,458.695282)"},"ID":12,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(259.4447,313.772217)"},"ID":13,"Name":"Parallel","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"IsChase","NodeData":{"Offset":"(-151.66687,130)"},"ID":14,"Name":"Is
+        Chase","Instant":true,"GameObjecttarget":3,"Singledistance":2,"SinglemaxDistance":15},{"Type":"Move","NodeData":{"Offset":"(148.292648,140)"},"ID":15,"Name":"Move","Instant":true,"GameObjectpatrolPoint":4,"SinglemoveSpeed":2,"Singledistance":2}]}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(469.3726,228.6539)"},"ID":16,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"Move","NodeData":{"Offset":"(-241.156464,287.484863)"},"ID":17,"Name":"Move","Instant":true,"GameObjectpatrolPoint":5,"SinglemoveSpeed":1,"Singledistance":0.1},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityAnimator.Play","NodeData":{"Offset":"(-9.59477,301.840668)"},"ID":18,"Name":"Play","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":6},"SharedStringstateName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Idle"},"Int32layer":-1,"SinglenormalizedTime":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(208.206192,283.6154)"},"ID":19,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"Move","NodeData":{"Offset":"(417.777771,280)"},"ID":20,"Name":"Move","Instant":true,"GameObjectpatrolPoint":7,"SinglemoveSpeed":1,"Singledistance":0.1},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityAnimator.Play","NodeData":{"Offset":"(582.7771,290)"},"ID":21,"Name":"Play","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":8},"SharedStringstateName":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"Idle"},"Int32layer":-1,"SinglenormalizedTime":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(712.7771,276.1111)"},"ID":22,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]}]}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -15451,8 +15440,8 @@ MonoBehaviour:
         - {fileID: 716440961}
         - {fileID: 2021225929}
         - {fileID: 716440961}
+        - {fileID: 716440961}
         - {fileID: 2081380181}
-        - {fileID: 730146856}
         - {fileID: 2021225929}
         - {fileID: 730146856}
         - {fileID: 2021225929}
@@ -15520,7 +15509,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.21505642, y: 0.017436981}
+  m_Offset: {x: -0.116185665, y: -0.4131782}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15531,7 +15520,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2441177, y: 1.3836136}
+  m_Size: {x: 1.1381197, y: 2.244844}
   m_EdgeRadius: 0
 --- !u!1 &6851352811945905452
 GameObject:
@@ -15545,7 +15534,7 @@ GameObject:
   - component: {fileID: 1433904941279811670}
   - component: {fileID: 6084770071417420775}
   - component: {fileID: 948972545004318616}
-  - component: {fileID: 8133671709145741925}
+  - component: {fileID: 8909213515803657567}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -15553,28 +15542,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8133671709145741925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6851352811945905452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e3099a2bb15cba41a56f738400bf10b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: Pawn
-  _maxHp: 100
-  _currentHp: 0
-  _attackDamage: 1
-  _type: 1
-  OnHealthChange:
-    m_PersistentCalls:
-      m_Calls: []
-  _maxPosture: 100
-  _currentPosture: 0
 --- !u!4 &8909213515803657566
 Transform:
   m_ObjectHideFlags: 0
@@ -15593,3 +15560,25 @@ Transform:
   m_Father: {fileID: 1673298616}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8909213515803657567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6851352811945905452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e3099a2bb15cba41a56f738400bf10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: 
+  _maxHp: 100
+  _currentHp: 0
+  _attackDamage: 5
+  _type: 1
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxPosture: 0
+  _currentPosture: 0

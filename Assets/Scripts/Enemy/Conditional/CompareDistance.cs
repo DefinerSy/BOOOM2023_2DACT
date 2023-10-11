@@ -8,6 +8,6 @@ public class CompareDistance : EnemyAction
     public override TaskStatus OnUpdate()
     {
         return Vector2.Distance(transform.position, 
-            target.transform.position) < distance.Value ? TaskStatus.Success : TaskStatus.Failure;
+            new Vector2(target.transform.position.x,transform.position.y)) < distance.Value ? TaskStatus.Success : TaskStatus.Failure;
     }
 }

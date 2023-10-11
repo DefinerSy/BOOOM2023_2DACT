@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
    public float dashCDTime;
    
-   [Header("UI对象")]
-   public PlayerStatBar playerStatBar;
+   [FormerlySerializedAs("playerStatBar")] [Header("UI对象")]
+   public PlayerStatbar playerStatbar;
    public PlayerDashbar playerDashbar;
    public List<Image> skilluis;
 
@@ -61,7 +62,7 @@ public class UIManager : MonoBehaviour
    private void OnHealthEvent(Character character,int Damage)
    {
       float persentage = character._currentHp / character._maxHp;
-      playerStatBar.OnHealthChange(persentage,Damage);
+      playerStatbar.OnHealthChange(persentage,Damage);
    }
    
    

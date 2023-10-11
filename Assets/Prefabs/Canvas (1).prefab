@@ -274,8 +274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e5d63f75109ee34da4470877d4cde77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashCDTime: 0
-  playerStatBar: {fileID: 6710803170169367339}
+  dashCDTime: 3
+  playerStatbar: {fileID: 6710803170169367339}
   playerDashbar: {fileID: 318899764235797824}
   skilluis:
   - {fileID: 5491274883716172733}
@@ -1179,7 +1179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashImage: {fileID: 1471802596661481974}
   beginCD: 0
-  cdTime: 0
+  cdTime: 1
 --- !u!1 &4712981591397866083
 GameObject:
   m_ObjectHideFlags: 0

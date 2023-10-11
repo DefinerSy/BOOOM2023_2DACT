@@ -19,7 +19,8 @@ public class Character : MonoBehaviour
     [SerializeField] public int _attackDamage;
     [SerializeField] protected type _type;
     [Header("角色事件")]
-    [SerializeField] public UnityEvent<Character,int> OnHealthChange;
+    [SerializeField] 
+    public UnityEvent<Character,int> OnHealthChange;
     bool isDie = false;
 
     protected virtual void Start()

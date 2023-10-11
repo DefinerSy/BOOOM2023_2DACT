@@ -9,7 +9,7 @@ public class Move : EnemyAction
     private Collider2D collider2D;
     public float distance=0.1f;
     //public SharedBool isFoundPlayer=false;
-    
+    private AnimatorStateInfo stateInfo;
      public override void OnAwake()
     {
         base.OnAwake();
@@ -24,17 +24,27 @@ public class Move : EnemyAction
     public override TaskStatus OnUpdate()
     {
         var position = gameObject.transform.position;
-        var position1 = patrolPoint.transform.position;
-        transform.localScale = position1.x > transform.position.x ? 
-            new Vector3(-1, 1, 1) : new Vector3(1, 1, 1);
+        var transformPosition = new Vector2(patrolPoint.transform.position.x,gameObject.transform.position.y);
+        stateInfo=Animator.GetCurrentAnimatorStateInfo(0);
+        if (((transformPosition.x > transform.position.x&&transform.localScale.x>0)||(transformPosition.x<transform.position.x&&transform.localScale.x<0))&&!stateInfo.IsName("Turn"))
+        {
+            Animator.Play("Turn");
+        }
+
+        if (stateInfo.IsName("Turn")&&stateInfo.normalizedTime<=0.99f)
+        {
+            return TaskStatus.Running;
+        }
+        if(stateInfo.normalizedTime>0.99f&&stateInfo.IsName("Turn"))
+        {
+            transform.localScale = transformPosition.x > transform.position.x ? 
+                new Vector3(-1, 1, 1) : new Vector3(1, 1, 1);
+            Animator.Play("Walk");
+        }
         position = Vector2.MoveTowards(position,
-            position1, moveSpeed * Time.deltaTime);
+            transformPosition, moveSpeed * Time.deltaTime);
         gameObject.transform.position = position;
-        // if(isFoundPlayer.Value)
-        // {
-        //     return TaskStatus.Failure;
-        // }
-        return Vector2.Distance(position, position1) < distance ? TaskStatus.Success : TaskStatus.Running;
+        return Vector2.Distance(position, transformPosition) < distance ? TaskStatus.Success : TaskStatus.Running;
         
     }
     

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
-public class PlayerStatBar : MonoBehaviour
+public class PlayerStatbar : MonoBehaviour
 {
    public Image hpImage;
    public Image hpDelayImage;
